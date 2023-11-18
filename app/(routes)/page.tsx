@@ -16,10 +16,10 @@ const Home = async () => {
     <Container>
       <div className="space-y-10 mb-10">
         <Billboard billboard={billboards} />
-      </div>
 
-      <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8 mt-10">
-        <ProductList title="Featured Products" products={products} />
+        <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+          <ProductList title="Featured Products" products={products} />
+        </div>
       </div>
     </Container>
   );
