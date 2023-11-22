@@ -1,0 +1,11 @@
+import { IProduct } from "@/types";
+
+const URL = `${process.env.NEXT_PUBLIC_API_URL}/product`;
+
+const getProduct = async ({ id }: { id: string }): Promise<IProduct> => {
+  const response = await fetch(`${URL}/${id}`);
+
+  return response.json();
+};
+
+export default getProduct;
