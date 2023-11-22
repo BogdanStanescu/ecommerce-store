@@ -14,9 +14,7 @@ interface IProductProps {
 const ProductCard = ({ product }: IProductProps) => {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push(`/product/${product?.id}`);
-  };
+  const handleClick = () => router.push(`/product/${product?.id}`);
 
   return (
     <div
@@ -46,6 +44,7 @@ const ProductCard = ({ product }: IProductProps) => {
           </div>
         </div>
       </div>
+
       {/* Description */}
       <div className="font-semibold text-lg">
         <p>{product.name}</p>
@@ -53,6 +52,7 @@ const ProductCard = ({ product }: IProductProps) => {
           {product.category.name}
         </p>
       </div>
+
       {/* Price */}
       <div className="flex items-center justify-between">
         <Currency value={+product.price} />

@@ -18,7 +18,7 @@ export interface IProduct {
   isFeatured: boolean;
   size: ISize;
   color: IColor;
-  images: IImage[];
+  images: any;
 }
 
 export interface IImage {
