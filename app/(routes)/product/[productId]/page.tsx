@@ -20,8 +20,6 @@ const ProductPage = async ({ params }: IProductPageProps) => {
     categoryId: product?.category?.id,
   });
 
-  // console.log(" params.productId", product);
-
   return (
     <div className="bg-white">
       <Container>
