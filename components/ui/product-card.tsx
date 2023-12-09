@@ -8,12 +8,14 @@ import IconButton from "@/components/ui/icon-button";
 import { useRouter } from "next/navigation";
 import { usePreviewModal } from "@/hooks/use-preview-modal";
 import { MouseEventHandler } from "react";
+import { useCart } from "@/hooks/use-cart";
 
 interface IProductProps {
   product: IProduct;
 }
 
 const ProductCard = ({ product }: IProductProps) => {
+  const cart = useCart();
   const router = useRouter();
   const previewModal = usePreviewModal();
 
@@ -21,7 +23,14 @@ const ProductCard = ({ product }: IProductProps) => {
 
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
+
     previewModal.onOpen(product);
+  };
+
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+
+    cart.addItem(product);
   };
 
   return (
@@ -46,7 +55,7 @@ const ProductCard = ({ product }: IProductProps) => {
               icon={<Expand size={20} className="text-gray-600" />}
             />
             <IconButton
-              // onClick={() => {}}
+              onClick={onAddToCart}
               icon={<ShoppingCart size={20} className="text-gray-600" />}
             />
           </div>

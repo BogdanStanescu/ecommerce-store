@@ -7,7 +7,7 @@ import { X } from "lucide-react";
 
 interface IModalProps {
   isOpen: boolean;
-  onClose: () => MouseEventHandler<HTMLButtonElement> | undefined;
+  onClose: () => void;
   children: React.ReactNode;
 }
 
